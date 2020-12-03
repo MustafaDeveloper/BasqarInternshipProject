@@ -3,14 +3,11 @@ package StepDefinitions;
 import Pages._US_10_DialogContent;
 import Pages._US_10_FormContent;
 import Pages._US_10_LeftNavigation;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebElement;
 
-public class _US_10_BudgetFunctionalty {
+public class _US_10_BudgetFunctionalitySteps {
     _US_10_LeftNavigation leftNavigation = new _US_10_LeftNavigation();
     _US_10_DialogContent dialogContent = new _US_10_DialogContent();
     _US_10_FormContent formContent = new _US_10_FormContent();
@@ -105,6 +102,5 @@ public class _US_10_BudgetFunctionalty {
             System.out.println(" *****   Save Button could not be find...  *********");
         }
     }
-
 
 }
