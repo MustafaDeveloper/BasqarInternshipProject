@@ -10,7 +10,7 @@
 <!--    <test name="test2">-->
 <!--        <parameter name="browser" value="chrome"></parameter>-->
 <!--        <classes>-->
-<!--            <class name="Runners._US_10_RegressionTestCrossBrowser"></class>-->
+<!--            <class name="Runners._US_00_SmokeTestCrossBrowser"></class>-->
 <!--        </classes>-->
 <!--    </test>-->
 

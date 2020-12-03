@@ -4,7 +4,7 @@ Feature: country functionality
     Given Navigate to basqar
     When Enter username and password and click Login button
 
-  @SmokeTest
+
   Scenario: create a budget incomplete form
 
     When navigate to budget
@@ -12,7 +12,7 @@ Feature: country functionality
     And save button can not be clicked
 
 
-  @RegressionTest
+
   Scenario Outline: create a budget with complete form
 
     When navigate to budget
@@ -23,7 +23,7 @@ Feature: country functionality
       | Group88     | 2021 |
 
 
-  @RegressionTest
+
   Scenario: delete a budget
 
     When navigate to budget
