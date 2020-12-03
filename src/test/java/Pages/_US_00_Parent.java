@@ -11,14 +11,6 @@ import org.testng.Assert;
 import java.util.List;
 
 public class _US_00_Parent {
-    /**
-     * Bu dosya diğer bütün page ler için ortak click ve sendkeys
-     * için nekleme, scroll ve clear gibi bütün işleleri tek yereden
-     * yapabilmek için eklendi.Bu class diğer pageler tarafından exten edilerek
-     * kullanılacak.Böylece tüm pagelerdeki elemanların click ve sendkeys özelliği
-     * hem bekleme hem scroll hem de clear çözelliği kazanmış olacak.
-     */
-
    WebDriver driver;
 WebDriverWait wait;
 

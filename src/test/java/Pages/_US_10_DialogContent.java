@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,13 +113,9 @@ public class _US_10_DialogContent extends _US_00_Parent {
 
 
     public void findElementAndClickFunction(String ElementName) {
-        /**
-         * Buraya tıklanacak butonun adı gönderilecek
-         * Burada adından hangi eleman olduğu bulunuyor
-         * ve sonra tıklanıyor.
-         */
 
-        switch (ElementName) {
+        switch (ElementName){
+
             case "loginButton":
                 myElement = loginButton;
                 break;
@@ -174,17 +171,11 @@ public class _US_10_DialogContent extends _US_00_Parent {
                 myElement = unapprove;
                 break;
         }
-
         clickFunction(myElement);
     }
 
 
     public void findElementAndSendKeysFunction(String ElementName, String value) {
-        /**
-         * Buraya tıklanacak butonun adı gönderilecek
-         * Burada adından hangi eleman olduğu bulunuyor
-         * ve sonra tıklanıyor.
-         */
 
         switch (ElementName) {
             case "username":
