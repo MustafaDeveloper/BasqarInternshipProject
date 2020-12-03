@@ -1,1 +1,1 @@
-scenario:
+scenario: var
