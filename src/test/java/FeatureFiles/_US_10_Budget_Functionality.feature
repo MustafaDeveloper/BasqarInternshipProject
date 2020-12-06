@@ -1,4 +1,4 @@
-Feature: country functionality
+Feature: Budget functionality
 
   Background:
     Given Navigate to basqar
