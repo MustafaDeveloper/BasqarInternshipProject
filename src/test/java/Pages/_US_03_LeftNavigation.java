@@ -17,7 +17,6 @@ public class _US_03_LeftNavigation extends _US_00_Parent {
     private WebElement fees;
 
     public void findElementAndClickFunction(String elementName) {
-
         switch (elementName) {
             case "setupOne":
                 myElement = setupOne;

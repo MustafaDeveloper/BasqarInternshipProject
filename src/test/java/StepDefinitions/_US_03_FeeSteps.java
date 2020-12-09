@@ -48,7 +48,6 @@ public class _US_03_FeeSteps {
         dialogContent3.findElementAndDeleteFunction(lastfee);
        dialogContent3.findElementAndClickFunction("yesButton");
 
-
     }
 }
 

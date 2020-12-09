@@ -1,5 +1,4 @@
 Feature: Fees Create Edit Delete Functionality
-
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login button

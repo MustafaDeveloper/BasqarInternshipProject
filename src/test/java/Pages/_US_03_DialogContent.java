@@ -87,7 +87,6 @@ public class _US_03_DialogContent extends _US_00_Parent {
                 myElement = msjContainer;
                 break;
         }
-
         verifyElementContainsText(myElement, mesaj);
     }
 
