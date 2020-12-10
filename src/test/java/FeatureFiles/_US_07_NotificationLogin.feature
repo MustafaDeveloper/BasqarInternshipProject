@@ -1,9 +1,11 @@
-Feature: Notification Functionality
+Feature: _US_07_Notification Functionality
 
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login button
 
+
+  @RegressionTest
   Scenario: Create a new Notification
 
     When Click on the element in the left class
@@ -47,4 +49,4 @@ Feature: Notification Functionality
       | searchButton |
       | deleteButton |
       | yesButton    |
-    Then Success message should be displayed
+    Then Success message should be display

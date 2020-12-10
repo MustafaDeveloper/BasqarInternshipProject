@@ -1,4 +1,4 @@
-Feature: Login Functionality
+Feature: _US_00_Login Functionality
 
   Scenario: Login with valid username and password
 

@@ -1,9 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
 <suite name="suit1"  parallel="tests" thread-count="1">
 
     <test name="test1">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="Runners._US_00_SmokeTestCrossBrowser"></class>
+            <class name="Runners._US_00_RegressionTest"></class>
         </classes>
     </test>
 

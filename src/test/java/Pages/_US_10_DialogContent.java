@@ -53,9 +53,8 @@ public class _US_10_DialogContent extends _US_00_Parent {
     })
     private List<WebElement> msjContainers;
 
-    @FindAll({
-            @FindBy(xpath = "//table/tbody/tr/td[2]")
-    })
+
+    @FindBy(xpath = "//table/tbody/tr/td[2]")
     public List<WebElement> nameList;
 
 
@@ -67,7 +66,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
 
 
     @FindBy(xpath = "//ms-edit-button/button")
-    public List<WebElement> editButtonList;
+    public List<WebElement> editBtnList;
 
     @FindBy(xpath = "//span[text()=' Yes ']")
     private WebElement yesButton;
@@ -111,10 +110,13 @@ public class _US_10_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//span[text()='Unapprove']")
     private WebElement unapprove;
 
+    @FindBy(xpath = "//td[text()=' No data to show ']")
+    private WebElement noData;
+
 
     public void findElementAndClickFunction(String ElementName) {
 
-        switch (ElementName){
+        switch (ElementName) {
 
             case "loginButton":
                 myElement = loginButton;
@@ -221,24 +223,52 @@ public class _US_10_DialogContent extends _US_00_Parent {
         wait.until(ExpectedConditions.invisibilityOf(myElement));
     }
 
+
+//    public void findElementAndDeleteFunction(String ElementName) {
+//        waitVisibleListAllElement(nameList);
+//        for (int i = 0; i < nameList.size(); i++) {
+//            if (nameList.get(i).getText().equals(ElementName)) {
+//                clickFunction(deleteBtnList.get(i));
+//            }
+//            if (i == 9 && forwardButton.isEnabled()) {
+//                i = 0;
+//                clickFunction(forwardButton);
+//                //waitUntilInvisible(forwardButton);
+//            }
+//        }
+//    }
+//
+//    public void findElementAndEditFunction(String ElementName) {
+//        for (int i = 0; i < nameList.size(); i++) {
+//            if (nameList.get(i).getText().equals(ElementName)) {
+//                clickFunction(editBtnList.get(i));
+//            }
+//            if (i == 9 && forwardButton.isEnabled()) {
+//                i = 0;
+//                clickFunction(forwardButton);
+//                //waitUntilInvisible(forwardButton);
+//            }
+//        }
+//    }
     public void findElementAndDeleteFunction(String deleteName) {
         editOrDelete(deleteBtnList, deleteName);
     }
 
     public void findElementAndEditFunction(String editName) {
-        editOrDelete(editButtonList, editName);
+        editOrDelete(editBtnList, editName);
     }
 
     public void editOrDelete(List<WebElement> element, String name) {
         int i = 0;
         int returnNum = 0;
+
         if (nameList.size() != 0) {
             String currentName = "";
 
             //waitVisibleListAllElement(myListElement);
             do {
                 currentName = nameList.get(i).getText();
-                WebElement elm=element.get(i);
+                WebElement elm = element.get(i);
                 i++;
 
                 if (name.equalsIgnoreCase(currentName)) {
@@ -257,7 +287,9 @@ public class _US_10_DialogContent extends _US_00_Parent {
         } else {
             System.out.println(" silinecek eleman bulunamadi....");
         }
-    }
+
+       }
+
 
     public void selectUserType(String userType) {
 

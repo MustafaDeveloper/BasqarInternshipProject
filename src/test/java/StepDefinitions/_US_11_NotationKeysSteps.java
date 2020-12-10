@@ -22,34 +22,34 @@ public class _US_11_NotationKeysSteps {
     @Then("^create a new Notation Keys$")
     public void createANewNotationKeys() {
      dialogContent.findElementAndClickFunction("addButton");
-       dialogContent.findElementAndSendKeysFunction("nameInput","group 08");
-       dialogContent.findElementAndSendKeysFunction("shortNameInput","8");
+       dialogContent.findElementAndSendKeysFunction("nameInput","group88");
+       dialogContent.findElementAndSendKeysFunction("shortNameInput","88");
        dialogContent.findElementAndSendKeysFunction("multiplierInput","12");
        dialogContent.findElementAndClickFunction("applyButton");
     }
 
    @And("^success message  should be displayed$")
    public void successMessageShouldBeDisplayed1() {
-        dialogContent.findElementAndVerifyContainsText("msjContainer","successfully created");
+        dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
       }
 
     @Then("^edit a Notation Keys$")
     public void editANotationKeys() {
-        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group 08");
+        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
         dialogContent.findElementAndClickFunction("searchButton");
-        dialogContent.findElementAndClickFunction("editButton");
+        dialogContent.findElementAndEditFunction("group88");
         dialogContent.findElementAndSendKeysFunction("multiplierInput","2");
         dialogContent.findElementAndClickFunction("applyButton");
     }
     @And("^success message should be  displayed$")
     public void successMessageShouldBeDisplayed2() {
-      dialogContent.findElementAndVerifyContainsText("msjContainer","successfully updated");
+      dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
     }
     @Then("^delete a Notation Keys account$")
     public void deleteANotationKeysAccount() {
-        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group 08");
+        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
         dialogContent.findElementAndClickFunction("searchButton");
-        dialogContent.findElementAndClickFunction("deleteButton");
+        dialogContent.findElementAndDeleteFunction("group88");
         dialogContent.findElementAndClickFunction("yesButton");
 
     }

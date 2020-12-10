@@ -47,8 +47,8 @@ public class _US_07_Stepdefs {
         }
     }
 
-    @Then("^Success message should be displayed$")
-    public void success_message_should_be_displayed() {
+    @Then("^Success message should be display$")
+    public void success_message_should_be_display() {
         dialogContent.findElementAndVerifyContainsText("msjContainer", "successfully");
     }
 

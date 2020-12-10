@@ -137,6 +137,8 @@ public class _US_02_NationalityPage extends _US_00_Parent {
 
         }
         verifyElementContainsText(myElement,msg);
+        wait.until(ExpectedConditions.invisibilityOf(myElement));
+
     }
     public void waitUntilunVisible(WebElement element){
         wait.until(ExpectedConditions.invisibilityOf(element));
