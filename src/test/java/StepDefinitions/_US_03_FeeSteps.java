@@ -26,7 +26,7 @@ public class _US_03_FeeSteps {
         dialogContent3.findElementAndClickFunction("saveButton");
     }
 
-    @Then("^Success message should be displayed$")
+    @Then("^Success_03 message should be displayed$")
     public void successMessageShouldBeDisplayed() {
         dialogContent3.findElementAndVerifyContainsText("msjContainer", "successfully");
     }
