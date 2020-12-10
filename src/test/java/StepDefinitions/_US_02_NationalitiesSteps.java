@@ -19,7 +19,7 @@ public class _US_02_NationalitiesSteps {
 
     public void userShouldBeAbleToCreateNewNationalites() {
 
-        createString = "Group8Nationalities_" + ""+((int)(Math.random()*10));
+        createString = "Group8Nationalities_" + ""+((int)(Math.random()*1000));
 
         nationalityPage.findElementAndClickFunction("setUpGeneral");
         nationalityPage.findElementAndClickFunction("parameterButton");
