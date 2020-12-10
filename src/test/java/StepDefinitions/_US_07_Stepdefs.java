@@ -47,10 +47,6 @@ public class _US_07_Stepdefs {
         }
     }
 
-    @Then("^Success message should be display$")
-    public void success_message_should_be_display() {
-        dialogContent.findElementAndVerifyContainsText("msjContainer", "successfully");
-    }
 
     @Then("^Notification page control$")
     public void notificationPageControl() {
@@ -63,5 +59,10 @@ public class _US_07_Stepdefs {
     @Then("^Notification name page control$")
     public void notificationNamePageControl() {
         dialogContent.findElementAndVerifyContainsText("nameSearcControl", "Ali baba");
+    }
+
+    @Then("^Success message should be displayed$")
+    public void successMessageShouldBeDisplayed() {
+        dialogContent.findElementAndVerifyContainsText("msjContainer", "successfully");
     }
 }

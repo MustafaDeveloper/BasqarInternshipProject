@@ -49,4 +49,4 @@ Feature: _US_07_Notification Functionality
       | searchButton |
       | deleteButton |
       | yesButton    |
-    Then Success message should be display
+    Then Success message should be displayed
