@@ -49,7 +49,7 @@ public class _US_02_NationalitiesSteps {
         nationalityPage.findElementAndSendKeysFunction("inputSearchName", createString);
         nationalityPage.findElementAndClickFunction("searchButton");
         nationalityPage.findElementAndEditFunction(createString);
-        nationalityPage.findElementAndSendKeysFunction("nameInput", "Group8Nationalities02");
+        nationalityPage.findElementAndSendKeysFunction("nameInput", createString+"2");
         nationalityPage.findElementAndClickFunction("saveButton");
         nationalityPage.findElementAndVerifyContainsText("msjContainer", "successfully");
         nationalityPage.waitUntilunVisible(nationalityPage.msjContainer);
@@ -60,9 +60,9 @@ public class _US_02_NationalitiesSteps {
     @Then("^User should be able to delete an existant Nationality$")
     public void userShouldBeAbleToDeleteAnExistantNationality() {
 
-        nationalityPage.findElementAndSendKeysFunction("inputSearchName", "Group8Nationalities02");
+        nationalityPage.findElementAndSendKeysFunction("inputSearchName", createString+"2");
         nationalityPage.findElementAndClickFunction("searchButton");
-        nationalityPage.findElementAndDeleteFunction("Group8Nationalities02");
+        nationalityPage.findElementAndDeleteFunction(createString+"2");
         nationalityPage.findElementAndClickFunction("yesButton");
         nationalityPage.findElementAndVerifyContainsText("msjContainer", "successfully");
         nationalityPage.waitUntilunVisible(nationalityPage.msjContainer);

@@ -23,7 +23,7 @@ public class _US_09_DialogContent extends _US_00_Parent{
     @FindBy(xpath = "//div[@id='toast-container']")
     private WebElement msjContainer;
 
-    @FindBy(xpath = "//ms-delete-button/button")
+    @FindBy(xpath = "(//ms-delete-button/button)[1]")
     public WebElement deleteButton;
 
     @FindBy(xpath = "//mat-toolbar-row/button[2]")
@@ -31,6 +31,13 @@ public class _US_09_DialogContent extends _US_00_Parent{
 
     @FindBy(xpath = "//span[text()=' Yes ']")
     public WebElement yesButton;
+
+    //--- general page max eleman select buttons
+    @FindBy (css = "mat-select[role='combobox']")
+    private WebElement pageSelectBtn;
+
+    @FindBy (xpath = "//span[text()=' 1000 ']")
+    private WebElement maxElementBtn;
 
 
     public void findElementAndClickFunction(String ElementName) {
@@ -56,6 +63,15 @@ public class _US_09_DialogContent extends _US_00_Parent{
                 case "yesButton":
                 myElement = yesButton;
                 break;
+
+            case "pageSelectBtn":
+                myElement = pageSelectBtn;
+                break;
+
+            case "maxElementBtn":
+                myElement = maxElementBtn;
+                break;
+
 
         }
         clickFunction(myElement);

@@ -35,8 +35,8 @@ public class _US_11_NotationKeysSteps {
 
     @Then("^edit a Notation Keys$")
     public void editANotationKeys() {
-        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
-        dialogContent.findElementAndClickFunction("searchButton");
+        //dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
+        //dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndEditFunction("group88");
         dialogContent.findElementAndSendKeysFunction("multiplierInput","2");
         dialogContent.findElementAndClickFunction("applyButton");
@@ -47,8 +47,8 @@ public class _US_11_NotationKeysSteps {
     }
     @Then("^delete a Notation Keys account$")
     public void deleteANotationKeysAccount() {
-        dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
-        dialogContent.findElementAndClickFunction("searchButton");
+        //dialogContent.findElementAndSendKeysFunction("nameInputForSearch","group88");
+       // dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndDeleteFunction("group88");
         dialogContent.findElementAndClickFunction("yesButton");
 

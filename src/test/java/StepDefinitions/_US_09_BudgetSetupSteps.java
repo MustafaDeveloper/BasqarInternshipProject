@@ -38,6 +38,9 @@ public class _US_09_BudgetSetupSteps {
 
     @When("^User should be able to delete Budget Projects and view successfully validating the message$")
     public void userShouldBeAbleToDeleteBudgetProjectsAndViewSuccessfullyValidatingTheMessage() {
+
+        dialogContent.findElementAndClickFunction("pageSelectBtn");
+        dialogContent.findElementAndClickFunction("maxElementBtn");
         dialogContent.findElementAndClickFunction("deleteButton");
         dialogContent.findElementAndClickFunction("yesButton");
         dialogContent.findElementAndVerifyContainsText("msjContainer", "success");
