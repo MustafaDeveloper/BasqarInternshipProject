@@ -10,7 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebElement;
 
-public class _US_10_BudgetFunctionality {
+public class _US_10_BudgetSteps {
     _US_10_LeftNavigation leftNavigation = new _US_10_LeftNavigation();
     _US_10_DialogContent dialogContent = new _US_10_DialogContent();
     _US_10_FormContent formContent = new _US_10_FormContent();

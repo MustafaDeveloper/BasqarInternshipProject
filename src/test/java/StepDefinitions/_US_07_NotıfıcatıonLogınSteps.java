@@ -8,7 +8,7 @@ import cucumber.api.java.en.When;
 
 import java.util.List;
 
-public class _US_07_Stepdefs {
+public class _US_07_NotıfıcatıonLogınSteps {
     _US_07_DialogContent dialogContent = new _US_07_DialogContent();
     _US_07_LeftNavigation leftNav = new _US_07_LeftNavigation();
 
