@@ -114,33 +114,28 @@ public class _US_04_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//ms-text-field[@type='number']/input")
     private WebElement priorityCode;
 
-    @FindBy (css = "mat-select[role='combobox']")
+    @FindBy(css = "mat-select[role='combobox']")
     private WebElement pageBtn;
 
-    @FindBy (xpath = "//span[text()=' 1000 ']")
+    @FindBy(xpath = "//span[text()=' 1000 ']")
     private WebElement maxElement;
 
-    @FindBy (xpath = "(//span[@class='mat-button-focus-overlay'])[9]")
+    @FindBy(xpath = "(//span[@class='mat-button-focus-overlay'])[9]")
     private WebElement editBtn;
 
-    @FindBy (xpath = "//ms-text-field[@placeholder='DISCOUNT.TITLE.DESCRIPTION']/input")
+    @FindBy(xpath = "//ms-text-field[@placeholder='DISCOUNT.TITLE.DESCRIPTION']/input")
     private WebElement discountSearch;
 
-    @FindBy (xpath = "//div[@role='alertdialog']")
+    @FindBy(xpath = "//div[@role='alertdialog']")
     private WebElement msjContainer2;
 
-
-
-
-
-
-
-
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut;
 
 
     public void findElementAndClickFunction(String ElementName) {
 
-        switch (ElementName){
+        switch (ElementName) {
 
             case "loginButton":
                 myElement = loginButton;
@@ -197,7 +192,7 @@ public class _US_04_DialogContent extends _US_00_Parent {
                 myElement = unapprove;
                 break;
 
-                // *******************************************
+            // *******************************************
 
             case "codeInput":
                 myElement = codeInput;
@@ -222,8 +217,6 @@ public class _US_04_DialogContent extends _US_00_Parent {
             case "discountSearch":
                 myElement = discountSearch;
                 break;
-
-
 
 
         }
@@ -254,7 +247,7 @@ public class _US_04_DialogContent extends _US_00_Parent {
                 myElement = shortName;
                 break;
 
-                // *********************************************
+            // *********************************************
 
             case "searchNameInput":
                 myElement = searchNameInput;
@@ -271,8 +264,6 @@ public class _US_04_DialogContent extends _US_00_Parent {
             case "discountSearch":
                 myElement = discountSearch;
                 break;
-
-
 
 
         }
@@ -306,13 +297,20 @@ public class _US_04_DialogContent extends _US_00_Parent {
     public void editOrDelete(List<WebElement> element, String name) {
         int i = 0;
         int returnNum = 0;
+        boolean key = false;
+
+        clickFunction(forTimeOut);
+
         if (nameList.size() != 0) {
             String currentName = "";
 
             //waitVisibleListAllElement(myListElement);
             do {
+                if (i == 0 && key == true) {
+                    clickFunction(forTimeOut);
+                }
                 currentName = nameList.get(i).getText();
-                WebElement elm=element.get(i);
+                WebElement elm = element.get(i);
                 i++;
 
                 if (name.equalsIgnoreCase(currentName)) {
@@ -323,7 +321,7 @@ public class _US_04_DialogContent extends _US_00_Parent {
                 if (i == 10 && forwardButton.isEnabled()) {
                     i = 0;
                     clickFunction(forwardButton);
-                    //waitUntilInvisible(forwardButton);
+                    key = true;
                 }
 
             } while (!name.equals(currentName) && i < nameList.size());
@@ -342,7 +340,8 @@ public class _US_04_DialogContent extends _US_00_Parent {
             }
         }
     }
-    public void waitUntilinVisible(String ElementName){
+
+    public void waitUntilinVisible(String ElementName) {
         switch (ElementName) {
             case "msjContainer":
                 myElement = msjContainer;

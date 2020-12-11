@@ -13,7 +13,8 @@ Feature: _US_07_Notification Functionality
       | notifications |
     Then Notification page control
     Then Click on the element in the content class
-      | addButton |
+      | forTimeOut |
+      | addButton  |
     When User sending the keys in the form content class
       | nameInput | Ali baba |
     Then Click on the element in the content class
@@ -31,7 +32,9 @@ Feature: _US_07_Notification Functionality
     Then Click on the element in the content class
       | searchButton |
     Then Notification name page control
+
     Then Click on the element in the content class
+      | forTimeOut |
       | editButton |
     When User sending the keys in the form content class
       | nameInput | asdfefdd |

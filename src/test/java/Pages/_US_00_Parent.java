@@ -59,6 +59,7 @@ WebDriverWait wait;
         System.out.println(element.getText());
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
 
+
     }
 
     public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList){

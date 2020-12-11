@@ -28,6 +28,7 @@ public class _US_04_DiscountsFunctionalitySteps {
 
     @Then("^input discount's name is \"([^\"]*)\" code is \"([^\"]*)\" and priority is \"([^\"]*)\"$")
     public void inputDiscountSNameIsCodeIsAndPriorityIs(String name, String code, String priority) {
+
         dialogContent.findElementAndClickFunction("addButton");
         dialogContent.findElementAndSendKeysFunction("discountInput",name);
         dialogContent.findElementAndClickFunction("discountInput");
@@ -44,14 +45,13 @@ public class _US_04_DiscountsFunctionalitySteps {
         leftNavigation.findElementAndClickFunction("setUpGeneral");
         leftNavigation.findElementAndClickFunction("parameterButton");
         leftNavigation.findElementAndClickFunction("discounts");
+        leftNavigation.findElementAndClickFunction("discounts");
 
     }
 
     @When("^delete created the discount name as \"([^\"]*)\"$")
     public void deleteCreatedTheDiscountNameAs(String name) {
-        dialogContent.findElementAndClickFunction("pageBtn");
-        dialogContent.findElementAndClickFunction("maxElement");
-        dialogContent.findElementAndClickFunction("discountSearch");
+
         dialogContent.findElementAndSendKeysFunction("discountSearch",name);
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndDeleteFunction("New Year 2021");

@@ -4,6 +4,7 @@ package Pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -53,6 +54,9 @@ public class _US_07_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//div[contains(text(),'Error')]")
     private WebElement ErrorMessage;
 
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut; // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
     public void findElementAndClickFunction(String ElementName) {
         switch (ElementName) {
             case "addButton":
@@ -89,7 +93,9 @@ public class _US_07_DialogContent extends _US_00_Parent {
                 myElement = yesButton;
                 break;
 
-
+            case "forTimeOut":
+                myElement = forTimeOut;
+                break;
         }
         clickFunction(myElement);
     }
@@ -128,4 +134,5 @@ public class _US_07_DialogContent extends _US_00_Parent {
         }
         verifyElementContainsText(myElement,msg);
     }
+
 }

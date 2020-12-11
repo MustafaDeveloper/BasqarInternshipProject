@@ -78,8 +78,11 @@ public class _US_01_CitizenshipsPageSteps {
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
+
         if(dialogContent.getListElement("deleteBtnList").size()==0){
             System.out.println("============ silinecek element bulunamadi. Test gecti! ============");
+        }else{
+            dialogContent.findElementAndDeleteFunction(createString2);
         }
 
 

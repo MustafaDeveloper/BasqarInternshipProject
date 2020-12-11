@@ -6,6 +6,9 @@
         <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="Runners._US_00_RegressionTest"></class>
+
+
+
         </classes>
     </test>
 
