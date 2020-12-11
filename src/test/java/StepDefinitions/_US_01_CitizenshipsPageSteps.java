@@ -47,8 +47,8 @@ public class _US_01_CitizenshipsPageSteps {
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
-        dialogContent.findElementAndEditFunction(createString1);
-        //dialogContent.findElementAndSendKeysFunction("nameInput",createString2);
+        dialogContent.findElementAndEditFunction(createString2);
+        dialogContent.findElementAndSendKeysFunction("nameInput",createString2);
         dialogContent.findElementAndClickFunction("saveButton");
         dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
         dialogContent.waitUntilinVisible("msjContainer");
@@ -75,6 +75,9 @@ public class _US_01_CitizenshipsPageSteps {
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
+        if(dialogContent.getListElement("deleteBtnList").size()==0){
+            System.out.println("============ silinecek element bulunamadi. Test gecti! ============");
+        }
 
 
     }
