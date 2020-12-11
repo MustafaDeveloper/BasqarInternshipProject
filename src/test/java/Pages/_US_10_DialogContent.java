@@ -262,7 +262,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
             //waitVisibleListAllElement(myListElement);
             do {
                 if (i == 0 && key == true) {
-                    clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+                    clickFunction(forTimeOut); //dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
                 }
                 currentName = nameList.get(i).getText();
                 WebElement elm = element.get(i);
