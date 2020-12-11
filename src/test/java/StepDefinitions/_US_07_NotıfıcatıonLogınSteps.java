@@ -25,13 +25,12 @@ public class _US_07_NotıfıcatıonLogınSteps {
 
     @Then("^Click on the element in the content class$")
     public void clickOnTheElementInTheContentClass(DataTable elements) {
-
+        //dialogContent.findElementAndClickFunction("forTimeOut");
         List<String> elementsToClick = elements.asList(String.class);
-
         for (int i = 0; i < elementsToClick.size(); i++) {
-
             System.out.println(elementsToClick.get(i));
             dialogContent.findElementAndClickFunction(elementsToClick.get(i));
+
         }
     }
 
@@ -55,9 +54,9 @@ public class _US_07_NotıfıcatıonLogınSteps {
     }
 
 
-
     @Then("^Notification name page control$")
     public void notificationNamePageControl() {
+        dialogContent.findElementAndClickFunction("forTimeOut");
         dialogContent.findElementAndVerifyContainsText("nameSearcControl", "Ali baba");
     }
 

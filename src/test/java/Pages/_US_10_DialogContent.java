@@ -120,6 +120,8 @@ public class _US_10_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//td[text()=' No data to show ']")
     private WebElement noData;
 
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut; // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
 
     public void findElementAndClickFunction(String ElementName) {
 
@@ -248,21 +250,20 @@ public class _US_10_DialogContent extends _US_00_Parent {
     }
 
     public void editOrDelete(List<WebElement> element, String name) {
-
-       // boolean key = false;
-//        clickFunction(pageSelectBtn);
-//        clickFunction(maxElementBtn);
         int i = 0;
         int returnNum = 0;
+        boolean key = false;
+
+        clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
 
         if (nameList.size() != 0) {
             String currentName = "";
-            do {
-//                if (i == 0 && key == true) {
-//                    clickFunction(pageSelectBtn);
-//                    clickFunction(maxElementBtn);
-//                }
 
+            //waitVisibleListAllElement(myListElement);
+            do {
+                if (i == 0 && key == true) {
+                    clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+                }
                 currentName = nameList.get(i).getText();
                 WebElement elm = element.get(i);
                 i++;
@@ -275,7 +276,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
                 if (i == 10 && forwardButton.isEnabled()) {
                     i = 0;
                     clickFunction(forwardButton);
-                    //key = true;
+                    key = true;
                 }
 
             } while (!name.equals(currentName) && i < nameList.size());
@@ -283,7 +284,6 @@ public class _US_10_DialogContent extends _US_00_Parent {
         } else {
             System.out.println(" silinecek eleman bulunamadi....");
         }
-
     }
 
 

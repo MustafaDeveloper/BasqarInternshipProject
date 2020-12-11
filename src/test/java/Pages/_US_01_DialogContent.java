@@ -203,23 +203,16 @@ public class _US_01_DialogContent extends _US_00_Parent {
             case "searchNameInput":
                 myElement = searchNameInput;
                 break;
-
         }
             return myElement;
         }
 
 
     public List<WebElement> getListElement(String element) {
-
         switch (element) {
-
-
             case "deleteBtnList":
                 myElementList = deleteBtnList;
                 break;
-
-
-
         }
         return myElementList;
     }
