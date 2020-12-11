@@ -35,6 +35,9 @@ public class _US_03_FeeSteps {
     public void userEditTheTo(String oldfee, String newfee) {
         dialogContent3.findElementAndSendKeysFunction("SearchNameInput", oldfee);
         dialogContent3.findElementAndClickFunction("SearchGeneral");
+
+        dialogContent3.findElementAndClickFunction("pageSelectBtn");
+        dialogContent3.findElementAndClickFunction("maxElementBtn");
         dialogContent3.findElementAndEditFunction(oldfee);
         dialogContent3.findElementAndSendKeysFunction("nameInput", newfee);
         dialogContent3.findElementAndClickFunction("saveButton");
@@ -45,6 +48,9 @@ public class _US_03_FeeSteps {
     public void userDeleteThe(String lastfee)  {
         dialogContent3.findElementAndSendKeysFunction("SearchNameInput",lastfee);
         dialogContent3.findElementAndClickFunction("SearchGeneral");
+
+        dialogContent3.findElementAndClickFunction("pageSelectBtn");
+        dialogContent3.findElementAndClickFunction("maxElementBtn");
         dialogContent3.findElementAndDeleteFunction(lastfee);
        dialogContent3.findElementAndClickFunction("yesButton");
 

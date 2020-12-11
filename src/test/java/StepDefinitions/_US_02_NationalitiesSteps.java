@@ -24,6 +24,8 @@ public class _US_02_NationalitiesSteps {
         nationalityPage.findElementAndClickFunction("setUpGeneral");
         nationalityPage.findElementAndClickFunction("parameterButton");
         nationalityPage.findElementAndClickFunction("nationalitiesButton");
+        nationalityPage.findElementAndClickFunction("nationalitiesButton");
+
         nationalityPage.findElementAndClickFunction("addButton");
         nationalityPage.findElementAndSendKeysFunction("nameInput", createString);
         nationalityPage.findElementAndClickFunction("saveButton");
@@ -48,6 +50,9 @@ public class _US_02_NationalitiesSteps {
     public void userShouldBeAbleToUpdateAnExistantNationality() {
         nationalityPage.findElementAndSendKeysFunction("inputSearchName", createString);
         nationalityPage.findElementAndClickFunction("searchButton");
+
+        nationalityPage.findElementAndClickFunction("pageSelectBtn");
+        nationalityPage.findElementAndClickFunction("maxElementBtn");
         nationalityPage.findElementAndEditFunction(createString);
         nationalityPage.findElementAndSendKeysFunction("nameInput", createString+"2");
         nationalityPage.findElementAndClickFunction("saveButton");
@@ -62,6 +67,9 @@ public class _US_02_NationalitiesSteps {
 
         nationalityPage.findElementAndSendKeysFunction("inputSearchName", createString+"2");
         nationalityPage.findElementAndClickFunction("searchButton");
+
+        nationalityPage.findElementAndClickFunction("pageSelectBtn");
+        nationalityPage.findElementAndClickFunction("maxElementBtn");
         nationalityPage.findElementAndDeleteFunction(createString+"2");
         nationalityPage.findElementAndClickFunction("yesButton");
         nationalityPage.findElementAndVerifyContainsText("msjContainer", "successfully");

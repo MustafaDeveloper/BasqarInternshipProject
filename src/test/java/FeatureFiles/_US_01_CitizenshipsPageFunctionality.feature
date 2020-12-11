@@ -1,4 +1,4 @@
-Feature:  _US_01 Citizenships Page functionality
+Feature:  _US_01_Citizenships Page functionality
 
   Background:
     Given Navigate to basqar

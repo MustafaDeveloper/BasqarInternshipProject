@@ -31,6 +31,9 @@ public class _US_01_CitizenshipsPageSteps {
         int random2 = ((int) (Math.random() * 1000));
 
         createString1 = "Group8_citizionships" + "" + random1;
+        createString2 = "Group8_citizionships" + "" + random2;
+
+        leftNavigation.findElementAndClickFunction("citizenships");
 
         dialogContent.findElementAndClickFunction("addButton");
         dialogContent.findElementAndSendKeysFunction("nameInput", createString1);
@@ -47,10 +50,10 @@ public class _US_01_CitizenshipsPageSteps {
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
-        dialogContent.findElementAndEditFunction(createString2);
+        dialogContent.findElementAndEditFunction(createString1);
         dialogContent.findElementAndSendKeysFunction("nameInput",createString2);
         dialogContent.findElementAndClickFunction("saveButton");
-        dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
+        dialogContent.findElementAndVerifyContainsText("msjContainer","successfull");
         dialogContent.waitUntilinVisible("msjContainer");
     }
 
@@ -61,8 +64,8 @@ public class _US_01_CitizenshipsPageSteps {
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
         dialogContent.findElementAndDeleteFunction(createString2);
-
-        dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
+        dialogContent.findElementAndClickFunction("yesButton");
+        dialogContent.findElementAndVerifyContainsText("msjContainer","successfull");
         dialogContent.waitUntilinVisible("msjContainer");
 
 

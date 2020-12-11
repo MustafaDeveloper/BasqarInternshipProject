@@ -42,6 +42,13 @@ public class _US_03_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//tbody/tr/td[2]")
     private List<WebElement> nameList;
 
+    //--- general page max eleman select buttons
+    @FindBy(css = "mat-select[role='combobox']")
+    private WebElement pageSelectBtn;
+
+    @FindBy(xpath = "//span[text()=' 1000 ']")
+    private WebElement maxElementBtn;
+    //-----------------------------------------------
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -59,6 +66,15 @@ public class _US_03_DialogContent extends _US_00_Parent {
             case "yesButton":
                 myElement = yesButton;
                 break;
+
+            case "maxElementBtn":
+                myElement = maxElementBtn;
+                break;
+
+            case "pageSelectBtn":
+                myElement = pageSelectBtn;
+                break;
+
         }
         clickFunction(myElement);
     }

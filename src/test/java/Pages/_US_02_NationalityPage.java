@@ -46,6 +46,14 @@ public class _US_02_NationalityPage extends _US_00_Parent {
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchButton;
 
+    //--- general page max eleman select buttons
+    @FindBy(css = "mat-select[role='combobox']")
+    private WebElement pageSelectBtn;
+
+    @FindBy(xpath = "//span[text()=' 1000 ']")
+    private WebElement maxElementBtn;
+    //-----------------------------------------------
+
     @FindBy(xpath = "//ms-edit-button/button")
     private List <WebElement> editButtonList;
 
@@ -110,6 +118,15 @@ public class _US_02_NationalityPage extends _US_00_Parent {
             case "yesButton":
                 myElement = yesButton;
                 break;
+
+            case "maxElementBtn":
+                myElement = maxElementBtn;
+                break;
+
+            case "pageSelectBtn":
+                myElement = pageSelectBtn;
+                break;
+
         }
         clickFunction(myElement);
     }

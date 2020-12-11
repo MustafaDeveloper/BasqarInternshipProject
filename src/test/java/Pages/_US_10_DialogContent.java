@@ -106,6 +106,13 @@ public class _US_10_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//*[@role='listbox']/mat-option")
     private WebElement searchDropList;
 
+    //--- general page max eleman select buttons
+    @FindBy(xpath = "(//mat-select[@role='combobox'])[4]")
+    private WebElement pageSelectBtn;
+
+    @FindBy(xpath = "//span[text()=' 1000 ']")
+    private WebElement maxElementBtn;
+    //-----------------------------------------------
 
     @FindBy(xpath = "//span[text()='Unapprove']")
     private WebElement unapprove;
@@ -172,6 +179,14 @@ public class _US_10_DialogContent extends _US_00_Parent {
             case "unapprove":
                 myElement = unapprove;
                 break;
+
+            case "maxElementBtn":
+                myElement = maxElementBtn;
+                break;
+
+            case "pageSelectBtn":
+                myElement = pageSelectBtn;
+                break;
         }
         clickFunction(myElement);
     }
@@ -224,32 +239,6 @@ public class _US_10_DialogContent extends _US_00_Parent {
     }
 
 
-//    public void findElementAndDeleteFunction(String ElementName) {
-//        waitVisibleListAllElement(nameList);
-//        for (int i = 0; i < nameList.size(); i++) {
-//            if (nameList.get(i).getText().equals(ElementName)) {
-//                clickFunction(deleteBtnList.get(i));
-//            }
-//            if (i == 9 && forwardButton.isEnabled()) {
-//                i = 0;
-//                clickFunction(forwardButton);
-//                //waitUntilInvisible(forwardButton);
-//            }
-//        }
-//    }
-//
-//    public void findElementAndEditFunction(String ElementName) {
-//        for (int i = 0; i < nameList.size(); i++) {
-//            if (nameList.get(i).getText().equals(ElementName)) {
-//                clickFunction(editBtnList.get(i));
-//            }
-//            if (i == 9 && forwardButton.isEnabled()) {
-//                i = 0;
-//                clickFunction(forwardButton);
-//                //waitUntilInvisible(forwardButton);
-//            }
-//        }
-//    }
     public void findElementAndDeleteFunction(String deleteName) {
         editOrDelete(deleteBtnList, deleteName);
     }
@@ -259,14 +248,21 @@ public class _US_10_DialogContent extends _US_00_Parent {
     }
 
     public void editOrDelete(List<WebElement> element, String name) {
+
+       // boolean key = false;
+//        clickFunction(pageSelectBtn);
+//        clickFunction(maxElementBtn);
         int i = 0;
         int returnNum = 0;
 
         if (nameList.size() != 0) {
             String currentName = "";
-
-            //waitVisibleListAllElement(myListElement);
             do {
+//                if (i == 0 && key == true) {
+//                    clickFunction(pageSelectBtn);
+//                    clickFunction(maxElementBtn);
+//                }
+
                 currentName = nameList.get(i).getText();
                 WebElement elm = element.get(i);
                 i++;
@@ -279,7 +275,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
                 if (i == 10 && forwardButton.isEnabled()) {
                     i = 0;
                     clickFunction(forwardButton);
-                    //waitUntilInvisible(forwardButton);
+                    //key = true;
                 }
 
             } while (!name.equals(currentName) && i < nameList.size());
@@ -288,7 +284,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
             System.out.println(" silinecek eleman bulunamadi....");
         }
 
-       }
+    }
 
 
     public void selectUserType(String userType) {

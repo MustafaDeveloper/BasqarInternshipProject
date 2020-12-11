@@ -60,6 +60,10 @@ public class _US_01_DialogContent extends _US_00_Parent {
     private WebElement maxElementBtn;
     //-----------------------------------------------
 
+
+    @FindBy(xpath = "//button[@aria-label='Close dialog']")
+    private WebElement closeDialog;
+
     @FindBy(xpath = "//div[@id='toast-container']")
     public WebElement msjContainer;
 
@@ -94,7 +98,9 @@ public class _US_01_DialogContent extends _US_00_Parent {
                 myElement = maxElementBtn;
                 break;
 
-
+            case "closeDialog":
+                myElement = closeDialog;
+                break;
         }
         clickFunction(myElement);
     }
