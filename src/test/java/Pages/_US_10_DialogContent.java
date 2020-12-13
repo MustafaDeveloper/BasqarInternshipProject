@@ -242,6 +242,7 @@ public class _US_10_DialogContent extends _US_00_Parent {
 
 
     public void findElementAndDeleteFunction(String deleteName) {
+
         editOrDelete(deleteBtnList, deleteName);
     }
 
