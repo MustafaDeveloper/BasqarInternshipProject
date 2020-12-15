@@ -14,60 +14,55 @@ public class _US_13_DialogContent extends _US_00_Parent {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "mat-input-0")
-    private WebElement username;
+    @FindBy(xpath = "//ms-add-button//button")
+    private WebElement addPositionButton;
+    @FindBy(xpath = "(//ms-text-field//input)[2]")
+    private WebElement nameInput;
+    @FindBy(xpath = "//span[text()='Save']")
+    private WebElement Save;
+    @FindBy(xpath = "//mat-form-field//input")
+    private WebElement searchNameInput;
+    @FindBy(xpath = "//ms-search-button//button")
+    private WebElement searchNameButton;
+    @FindBy(xpath = "//ms-edit-button//button")
+    private WebElement editButton;
 
-    @FindBy(id = "mat-input-1")
-    private WebElement password;
-
-    @FindBy(css = "button[aria-label='LOGIN']")
-    private WebElement loginButton;
-
-    @FindBy(linkText = "Got it!")
-    private WebElement gotItBtn;
-
-    @FindBy(linkText = "Got it!")
-    private List<WebElement> gotItBtns;
-
-    @FindBy(xpath = "//div[@id='toast-container']")
-    private WebElement msjContainer;
-
-    @FindBy(xpath = "//div[contains(text(),'Error')]")
-    private WebElement ErrorMessage;
 
     public void findElementAndClickFunction(String ElementName) {
         switch (ElementName) {
-            case "loginButton":
-                myElement = loginButton;
+            case "addPositionButton":
+                myElement = addPositionButton;
+                break;
+            case "Save":
+                myElement = Save;
+                break;
+            case "searchNameButton":
+                myElement = searchNameButton;
+                break;
+            case "editButton":
+                myElement = editButton;
                 break;
 
-            case "gotItBtn":
-                // bu eleman yok ise çoklu olarak yinede bulduk
-                // eğer gerçekten yok ise size 0 olacağı için
-                // bekletmeye düşmesin diye fonksiyonu geri gönderdik.
-                if (gotItBtns.size() == 0)
-                    return;
 
-                myElement = gotItBtn;
-                break;
         }
         clickFunction(myElement);
     }
 
     public void findElementAndSendKeysFunction(String ElementName, String value) {
         switch (ElementName) {
-            case "username":
-                myElement = username;
+            case "nameInput":
+                myElement = nameInput;
+                break;
+            case "searchNameInput":
+                myElement = searchNameInput;
                 break;
 
-            case "password":
-                myElement = password;
-                break;
+
         }
         sendKeysFunction(myElement, value);
     }
 
-    public void findElementAndVerifyContainsText(String ElementName, String msg) {
+   /* public void findElementAndVerifyContainsText(String ElementName, String msg) {
         switch (ElementName) {
             case "msjContainer":
                 myElement = msjContainer;
@@ -77,5 +72,5 @@ public class _US_13_DialogContent extends _US_00_Parent {
                 myElement = ErrorMessage;
                 break;
         }
-    }
+    }*/
 }

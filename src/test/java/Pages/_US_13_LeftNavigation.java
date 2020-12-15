@@ -13,11 +13,10 @@ public class _US_13_LeftNavigation extends _US_00_Parent {
 
     @FindBy(xpath = "//span[text()='Human Resources']")
     private WebElement humanResources;
-    @FindBy(xpath = "//span[text()='Notifications']")
-    private WebElement notifications;
-
-    @FindBy(linkText = "Parameters")
-    private WebElement parametersButton;
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    private WebElement humanResourcesSetup;
+  @FindBy(xpath = "//span[text()='Position Categories']")
+    private WebElement positionCategories;
 
     @FindBy(linkText = "Document Types")
     private WebElement documentsTypesButton;
@@ -30,12 +29,12 @@ public class _US_13_LeftNavigation extends _US_00_Parent {
                 myElement = humanResources;
                 break;
 
-            case "notifications":
-                myElement = notifications;
+            case "humanResourcesSetup":
+                myElement = humanResourcesSetup;
                 break;
 
-            case "documentsTypesButton":
-                myElement = documentsTypesButton;
+            case "positionCategories":
+                myElement = positionCategories;
                 break;
 
         }
