@@ -1,7 +1,7 @@
 package StepDefinitions;
 
-import Pages._US_07_DialogContent;
-import Pages._US_07_LeftNavigation;
+
+
 import Pages._US_13_DialogContent;
 import Pages._US_13_LeftNavigation;
 import cucumber.api.DataTable;
@@ -46,8 +46,17 @@ public class _US_13_Stepdefs {
 
         for (int i = 0; i < elementsToClick.size(); i++) {
 
-            System.out.println(elementsToClick.get(i));
             dialogContent.findElementAndClickFunction(elementsToClick.get(i));
         }
+    }
+
+    @And("^Position Category page  control$")
+    public void positionCategoryPageControl() {
+        dialogContent.findElementAndVerifyContainsText("positionCategoryPageCheck","Position");
+    }
+
+    @And("^Position Category page search name control$")
+    public void positionCategoryPageSearchNameControl() {
+        dialogContent.findElementAndVerifyContainsText("nameSearchControl","Grup8Categories");
     }
 }

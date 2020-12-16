@@ -14,6 +14,13 @@ public class _US_13_DialogContent extends _US_00_Parent {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(xpath = "//h3[text()='  Position Categories ']")
+    private WebElement positionCategoryPageCheck;
+
+    @FindBy(xpath = "//user-message-bell//button")
+    private WebElement bellButton;
+    @FindBy(xpath = "(//mat-toolbar-row//button)[2]")
+    private WebElement closeButton;
     @FindBy(xpath = "//ms-add-button//button")
     private WebElement addPositionButton;
     @FindBy(xpath = "(//ms-text-field//input)[2]")
@@ -24,12 +31,24 @@ public class _US_13_DialogContent extends _US_00_Parent {
     private WebElement searchNameInput;
     @FindBy(xpath = "//ms-search-button//button")
     private WebElement searchNameButton;
-    @FindBy(xpath = "//ms-edit-button//button")
+    @FindBy(xpath = "//ms-edit-button//button//span")
     private WebElement editButton;
+    @FindBy(xpath = "//ms-delete-button//button")
+    private WebElement deleteButton;
+    @FindBy(xpath = "//span[text()=' Yes ']")
+    private WebElement yesButton;
+    @FindBy(xpath = "(//ms-table//td)[2]")
+    private WebElement nameSearchControl;
 
 
     public void findElementAndClickFunction(String ElementName) {
         switch (ElementName) {
+            case "bellButton":
+                myElement = bellButton;
+                break;
+            case "closeButton":
+                myElement = closeButton;
+                break;
             case "addPositionButton":
                 myElement = addPositionButton;
                 break;
@@ -41,6 +60,12 @@ public class _US_13_DialogContent extends _US_00_Parent {
                 break;
             case "editButton":
                 myElement = editButton;
+                break;
+            case "deleteButton":
+                myElement = deleteButton;
+                break;
+            case "yesButton":
+                myElement = yesButton;
                 break;
 
 
@@ -62,15 +87,17 @@ public class _US_13_DialogContent extends _US_00_Parent {
         sendKeysFunction(myElement, value);
     }
 
-   /* public void findElementAndVerifyContainsText(String ElementName, String msg) {
+    public void findElementAndVerifyContainsText(String ElementName, String msg) {
         switch (ElementName) {
-            case "msjContainer":
-                myElement = msjContainer;
+            case "positionCategoryPageCheck":
+                myElement = positionCategoryPageCheck;
+                break;
+            case "nameSearchControl":
+                myElement = nameSearchControl;
                 break;
 
-            case "ErrorMessage":
-                myElement = ErrorMessage;
-                break;
+
         }
-    }*/
+        verifyElementContainsText(myElement,msg);
+    }
 }

@@ -10,16 +10,37 @@ Feature: Position Category
       | humanResources      |
       | humanResourcesSetup |
       | positionCategories  |
+    And Position Category page  control
     Then Click on the element  Position Category the content class
+      | bellButton  |
+      | closeButton |
       | addPositionButton |
-   And Send keys new Position Category in the content
- #   Then Click on the element  Position Category the content class
- #     | Save |
- #   And Send keys new Position Category in the content class
- #     | searchNameInput | Grup8Categories |
- #   Then Click on the element  Position Category in the content class
- #     | searchNameButton |  | editButton |
- #   And Send keys new Position Category in the content class
- #     | nameInput | Grup8CategoriesEdit |
- #   Then Click on the element  Position Category in the content class
- #     | Save |
+    And Send keys new Position Category in the content
+      | nameInput | Grup8Categories |
+    Then Click on the element  Position Category the content class
+      | Save |
+    And Success message should be displayed
+    And Send keys new Position Category in the content
+      | searchNameInput | Grup8Categories |
+    Then Click on the element  Position Category the content class
+      | searchNameButton |
+      | bellButton  |
+      | closeButton |
+    And Position Category page search name control
+    Then Click on the element  Position Category the content class
+      | editButton |
+    And Send keys new Position Category in the content
+      | nameInput | Grup8CategoriesEdit |
+    Then Click on the element  Position Category the content class
+      | Save |
+    And Success message should be displayed
+    And Send keys new Position Category in the content
+      | searchNameInput | Grup8CategoriesEdit |
+    Then Click on the element  Position Category the content class
+      | searchNameButton |
+      | bellButton       |
+      | closeButton      |
+    Then Click on the element  Position Category the content class
+      | deleteButton |
+      | yesButton    |
+    And Success message should be displayed
