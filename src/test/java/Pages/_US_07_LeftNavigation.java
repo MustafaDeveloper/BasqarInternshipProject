@@ -16,11 +16,7 @@ public class _US_07_LeftNavigation extends _US_00_Parent {
     @FindBy(xpath = "//span[text()='Notifications']")
     private WebElement notifications;
 
-    @FindBy(linkText = "Parameters")
-    private WebElement parametersButton;
 
-    @FindBy(linkText = "Document Types")
-    private WebElement documentsTypesButton;
 
     public void findElementAndClickFunction(String ElementName) {
 
@@ -34,9 +30,6 @@ public class _US_07_LeftNavigation extends _US_00_Parent {
                 myElement = notifications;
                 break;
 
-            case "documentsTypesButton":
-                myElement = documentsTypesButton;
-                break;
 
         }
         clickFunction(myElement);
