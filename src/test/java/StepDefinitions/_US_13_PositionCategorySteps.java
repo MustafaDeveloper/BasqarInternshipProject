@@ -11,7 +11,7 @@ import cucumber.api.java.en.When;
 
 import java.util.List;
 
-public class _US_13_Stepdefs {
+public class _US_13_PositionCategorySteps {
     _US_13_DialogContent dialogContent = new _US_13_DialogContent();
     _US_13_LeftNavigation leftNav = new _US_13_LeftNavigation();
 
