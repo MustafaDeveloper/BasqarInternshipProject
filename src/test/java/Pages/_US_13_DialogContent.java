@@ -100,4 +100,4 @@ public class _US_13_DialogContent extends _US_00_Parent {
         }
         verifyElementContainsText(myElement,msg);
     }
-}
+}//son

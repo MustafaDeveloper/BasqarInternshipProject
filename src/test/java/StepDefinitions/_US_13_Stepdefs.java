@@ -59,4 +59,4 @@ public class _US_13_Stepdefs {
     public void positionCategoryPageSearchNameControl() {
         dialogContent.findElementAndVerifyContainsText("nameSearchControl","Grup8Categories");
     }
-}
+}//son

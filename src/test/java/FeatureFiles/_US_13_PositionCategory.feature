@@ -44,3 +44,4 @@ Feature: Position Category
       | deleteButton |
       | yesButton    |
     And Success message should be displayed
+    #//son
