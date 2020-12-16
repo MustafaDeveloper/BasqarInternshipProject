@@ -24,7 +24,7 @@ WebDriverWait wait;
 
     public void clickFunction(WebElement element){
         //elemana kadar scroll yap
-        scrollToElement(element);
+ scrollToElement(element);
         //eleman clickable olana kadar bekle
         waitUntilClickable(element);
         //click yap
@@ -49,12 +49,12 @@ WebDriverWait wait;
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void scrollToElement(WebElement element)
-    {
-        JavascriptExecutor js= (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].scrollIntoView();",element);
-    }
-    public void verifyElementContainsText(WebElement element, String text){
+  public void scrollToElement(WebElement element)
+  {
+      JavascriptExecutor js= (JavascriptExecutor)driver;
+      js.executeScript("arguments[0].scrollIntoView();",element);
+  }
+ public void verifyElementContainsText(WebElement element, String text){
         waitUntilVisible(element);
         System.out.println(element.getText());
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
