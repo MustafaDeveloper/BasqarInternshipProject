@@ -8,12 +8,16 @@ import cucumber.api.java.en.When;
 import gherkin.lexer.Th;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class _US_05_GradelevelsSteps {
     WebDriver driver;
     _US_05_LeftNavigation leftNavigation = new _US_05_LeftNavigation();
     _US_05_DialogContent dialogContent = new _US_05_DialogContent();
+
     @When("^Navigate to Grade levels  page$")
-   public void navigateToGradelevelsPage() throws InterruptedException {
+   public void navigateToGradelevelsPage() {
 
         leftNavigation.findElementAndClickFunction("setUpGeneral");
         leftNavigation.findElementAndClickFunction("parameterButton");
@@ -22,10 +26,9 @@ public class _US_05_GradelevelsSteps {
 
     }
     @Then("^Create a Grade$")
-    public void CreateAGrade() throws InterruptedException {
+    public void CreateAGrade() {
 
        dialogContent.findElementAndClickFunction("addButton");
-
         dialogContent.findElementAndSendKeysFunction("nameInput","nalan");
         dialogContent.findElementAndSendKeysFunction("shortNameInput","n7");
        dialogContent.findElementAndSendKeysFunction("orderInput","1");
@@ -38,39 +41,25 @@ public class _US_05_GradelevelsSteps {
      dialogContent.waitUntilinVisible("msjContainer");
   }
     @Then("^Edit a Grade levels$")
-    public void EditaGradelevels() throws InterruptedException {
+    public void EditaGradelevels()  {
 
        dialogContent.findElementAndEditFunction("nalan");
-
         dialogContent.findElementAndSendKeysFunction("nameInput","nalan8");
-
         dialogContent.findElementAndClickFunction("activeslide");
-
         dialogContent.findElementAndClickFunction("saveButton");
 
     }
 
     @Then("^Success message should be  displayed$")
-    public void SuccessMessageshouldbedisplayed() throws InterruptedException {
-
-
+    public void SuccessMessageshouldbedisplayed()  {
     dialogContent.findElementAndVerifyContainsText("msjContainer","successfully");
         dialogContent.waitUntilinVisible("msjContainer");
     }
 
     @Then("^Delete a Grade levels$")
-    public void DeleteaGradelevels() throws InterruptedException {
-
+    public void DeleteaGradelevels() throws InterruptedException, AWTException {
         dialogContent.findElementAndDeleteFunction("nalan8");
-
-        dialogContent.findElementAndClickFunction("deleteButton");
-
-        dialogContent.findElementAndClickFunction("deleteButton");
-
-dialogContent.findElementAndClickFunction("Layer");
         dialogContent.findElementAndClickFunction("yesButton");
-
-
 
     }
     @And("^Success  message  should be displayed$")
