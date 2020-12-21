@@ -18,7 +18,6 @@ public class _US_05_DialogContent extends _US_00_Parent{
     @FindBy(xpath = "//ms-add-button/div/button/span")
     private WebElement addButton;
 
-
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
     private WebElement nameInput;
     @FindBy(xpath = " //span[text()='Active']")
