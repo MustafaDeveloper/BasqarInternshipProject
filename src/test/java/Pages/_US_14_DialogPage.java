@@ -59,6 +59,13 @@ public class _US_14_DialogPage extends _US_00_Parent{
     @FindBy(xpath = "//span[text()=' Yes ']")
     private WebElement yesButton;
 
+
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    private WebElement forwardButton;
+
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut; // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
     public void findElementAndEditFunction(String elementName){
         for (int i = 0; i < nameList.size(); i++) {
             if(    nameList.get(i).getText().equals(elementName))
@@ -142,7 +149,41 @@ public class _US_14_DialogPage extends _US_00_Parent{
 
     }
 
+    public void searchAndNameControl(String name) {
+        int i = 0;
+        int returnNum = 0;
+        boolean key = false;
 
+        clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
+        if (nameList.size() != 0) {
+            String currentName = "";
+
+            //waitVisibleListAllElement(myListElement);
+            do {
+                if (i == 0 && key == true) {
+                    clickFunction(forTimeOut); //dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+                }
+                currentName = nameList.get(i).getText();
+
+                i++;
+
+                if (name.equalsIgnoreCase(currentName)) {
+                    Assert.assertTrue(name.equalsIgnoreCase(currentName));
+                    break;
+                }
+                if (i == 10 && forwardButton.isEnabled()) {
+                    i = 0;
+                    clickFunction(forwardButton);
+                    key = true;
+                }
+
+            } while (!name.equals(currentName) && i < nameList.size());
+
+        } else {
+            System.out.println(" eleman bulunamadi....");
+        }
+    }
 
 
 }

@@ -1,4 +1,4 @@
-Feature: Position Category
+Feature: _US_13_Position Category
 
   Background:
     Given Navigate to basqar

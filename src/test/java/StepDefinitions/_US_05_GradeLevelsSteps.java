@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class _US_05_GradelevelsSteps {
+public class _US_05_GradeLevelsSteps {
     WebDriver driver;
     _US_05_LeftNavigation leftNavigation = new _US_05_LeftNavigation();
     _US_05_DialogContent dialogContent = new _US_05_DialogContent();
@@ -27,7 +27,7 @@ public class _US_05_GradelevelsSteps {
     }
     @Then("^Create a Grade$")
     public void CreateAGrade() {
-
+        leftNavigation.findElementAndClickFunction("gardeLevelsButton");
        dialogContent.findElementAndClickFunction("addButton");
         dialogContent.findElementAndSendKeysFunction("nameInput","nalan");
         dialogContent.findElementAndSendKeysFunction("shortNameInput","n7");

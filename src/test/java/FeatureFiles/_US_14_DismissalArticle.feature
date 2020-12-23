@@ -1,4 +1,4 @@
-Feature: Dismissal Article Functionalities
+Feature: _US_14_Dismissal Article Functionalities
 
   Background:
     Given Navigate to basqar

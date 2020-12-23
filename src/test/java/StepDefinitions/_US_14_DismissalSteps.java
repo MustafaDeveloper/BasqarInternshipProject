@@ -40,10 +40,11 @@ public class _US_14_DismissalSteps {
         dialogPage.findElementAndSendKeysFunction("inputSearchName","Group8Ar1");
         dialogPage.findElementAndClickFunction("searchButton");
 
-        dialogPage.findElementAndClickFunction("pageSelectBtn");
-        dialogPage.findElementAndClickFunction("maxElementBtn");
-        dialogPage.elementNameControl("Group8Ar1");
+       // dialogPage.findElementAndClickFunction("pageSelectBtn");
+        //dialogPage.findElementAndClickFunction("maxElementBtn");
 
+        //dialogPage.elementNameControl("Group8Ar1");
+        dialogPage.searchAndNameControl("Group8Ar1");
 
     }
 
