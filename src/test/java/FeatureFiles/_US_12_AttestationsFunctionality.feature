@@ -1,4 +1,4 @@
-Feature: _US_13_Attestations Functionality
+Feature: _US_12_Attestations Functionality
 
   Background:
     Given Navigate to basqar
