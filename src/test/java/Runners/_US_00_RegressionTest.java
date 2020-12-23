@@ -21,25 +21,25 @@ import org.testng.annotations.Parameters;
 )
 public class _US_00_RegressionTest extends AbstractTestNGCucumberTests {
 
-    @BeforeClass
-    @Parameters("browser")
-    public static void beforeClass(String browser)
-    {
-        Driver.threadBrowserName.set(browser);
-    }
-
-    @AfterClass
-    public static void afterClass()
-    {
-        // ayarlar alındı, cucumber extend reporttan haberi oldu
-        Reporter.loadXMLConfig("src/test/java/XMLFiles/extendReportSet.xml");
-        Reporter.setSystemInfo("User Name", "Grup8");
-        Reporter.setSystemInfo("Application Name", "Basqar");
-        Reporter.setSystemInfo("Operating System Info", System.getProperty("os.name"));
-        Reporter.setSystemInfo("Department", "QA");
-        Reporter.setSystemInfo("Gorev:", "Proje Bölüm-3.7.");
-        Reporter.setTestRunnerOutput("Test excetuion Cucumber report");
-
-    }
+//    @BeforeClass
+//    @Parameters("browser")
+//    public static void beforeClass(String browser)
+//    {
+//        Driver.threadBrowserName.set(browser);
+//    }
+//
+//    @AfterClass
+//    public static void afterClass()
+//    {
+//        // ayarlar alındı, cucumber extend reporttan haberi oldu
+//        Reporter.loadXMLConfig("src/test/java/XMLFiles/extendReportSet.xml");
+//        Reporter.setSystemInfo("User Name", "Grup8");
+//        Reporter.setSystemInfo("Application Name", "Basqar");
+//        Reporter.setSystemInfo("Operating System Info", System.getProperty("os.name"));
+//        Reporter.setSystemInfo("Department", "QA");
+//        Reporter.setSystemInfo("Gorev:", "Proje Bölüm-3.7.");
+//        Reporter.setTestRunnerOutput("Test excetuion Cucumber report");
+//
+//    }
 
 }
