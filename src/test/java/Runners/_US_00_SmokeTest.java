@@ -19,8 +19,7 @@ import org.testng.annotations.Parameters;
 //                // oluşturalacak raporun yeri ve adı veriliyor.}
 
 
-        format= {"pretty","html:test-output_1",
-                "json:target/cucumber-reports/CucumberTestReport.json"},
+
         plugin = ("json:target/cucumber-reports/CucumberTestReport.json"),
         monochrome= true
 
