@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 @CucumberOptions(
-       tags = {"@RegressionTest"},
+       tags = {"@SmokeTest"},
         features = {"src\\test\\java\\FeatureFiles"},
         glue = {"StepDefinitions"},
         dryRun = false,

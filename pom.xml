@@ -129,7 +129,7 @@
                         <configuration>
                             <includes>
                                 <!-- for  run class or classes-->
-                                <include>**/_03_TestRunnerSmoke.java</include>
+                                <include>**/_US_00_SmokeTestCrossBrowser</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                         </configuration>
