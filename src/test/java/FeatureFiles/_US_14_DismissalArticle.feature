@@ -4,6 +4,9 @@ Feature: Dismissal Article Functionalities
     Given Navigate to basqar
     When Enter username and password and click Login button
 
+
+
+  @RegressionTest
   Scenario: create, edit, delete and control Dismissal Article
 
 

@@ -4,6 +4,8 @@ Feature: Position Category
     Given Navigate to basqar
     When Enter username and password and click Login button
 
+
+  @RegressionTest
   Scenario: Create a Position Category, edit und delete
 
     When Click on the element in the left classe

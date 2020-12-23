@@ -6,7 +6,7 @@ Feature:_US_05_GradeLevels page functionality
     When Enter username and password and click Login button
 
 
-
+  @RegressionTest
   Scenario: create a new Grade levels
     When Navigate to Grade levels  page
     Then Create a Grade
