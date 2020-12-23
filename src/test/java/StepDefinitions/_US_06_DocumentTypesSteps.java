@@ -33,7 +33,7 @@ public class _US_06_DocumentTypesSteps {
 
         robot = new Robot();
         robot.keyPress(KeyEvent.VK_TAB);
-
+        _US_06_DialogContent.findElementAndClickFunction("newDocumentTag");
         _US_06_DialogContent.findElementAndClickFunction("saveButton");
     }
 

@@ -170,6 +170,9 @@ public class _US_06_DialogContent extends _US_00_Parent {
                 myElement = newDocumentTag;
                 break;
 
+            case "forTimeOut":
+                myElement = forTimeOut;
+                break;
 
         }
         clickFunction(myElement);

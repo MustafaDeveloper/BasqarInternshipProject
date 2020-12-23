@@ -48,8 +48,5 @@ Feature: _US_07_Notification Functionality
       | backButton |
     When User sending the keys in the form content class
       | searchName | asdfefdd |
-    Then Click on the element in the content class
-      | searchButton |
-      | deleteButton |
-      | yesButton    |
+    Then Delete element in the content class
     Then Success message should be displayed
