@@ -113,9 +113,10 @@
             <version>5.5.12</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
+
+
+
     <profiles>
 
         <profile>
@@ -129,7 +130,7 @@
                         <configuration>
                             <includes>
                                 <!-- for  run class or classes-->
-                                <include>**/_US_00_SmokeTestCrossBrowser</include>
+                                <include>**/_US_00_SmokeTest</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                         </configuration>
