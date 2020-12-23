@@ -4,7 +4,7 @@ Feature: _US_10_Budget functionality
     Given Navigate to basqar
     When Enter username and password and click Login button
 
-  @SmokeTest
+
   Scenario: create a budget incomplete form
 
     When navigate to budget
