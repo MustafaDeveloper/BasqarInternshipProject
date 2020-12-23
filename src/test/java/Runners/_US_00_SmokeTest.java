@@ -19,7 +19,7 @@ import org.testng.annotations.Parameters;
                 // oluşturalacak raporun yeri ve adı veriliyor.
         }
 )
-public class _US_00_SmokeTestCrossBrowser extends AbstractTestNGCucumberTests {
+public class _US_00_SmokeTest extends AbstractTestNGCucumberTests {
 
 //    @BeforeClass
 //    @Parameters("browser")

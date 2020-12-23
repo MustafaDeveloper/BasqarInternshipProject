@@ -5,18 +5,12 @@
     <test name="test1">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="Runners._US_00_SmokeTestCrossBrowser"></class>
+            <class name="Runners._US_00_SmokeTest"></class>
 
 
 
         </classes>
     </test>
 
-<!--    <test name="test2">-->
-<!--        <parameter name="browser" value="chrome"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="Runners._US_00_SmokeTestCrossBrowser"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
 
 </suite>
