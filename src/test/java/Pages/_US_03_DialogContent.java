@@ -33,8 +33,8 @@ public class _US_03_DialogContent extends _US_00_Parent {
     private WebElement SearchGeneral;
     @FindBy(xpath = "//span[text()=' Yes ']")
     private WebElement yesButton;
-    @FindBy(tagName = "ms-edit-button")
-    private List<WebElement> editBtnList;
+//    @FindBy(tagName = "ms-edit-button")
+//    private List<WebElement> editBtnList;
 
     @FindBy(tagName = "ms-delete-button")
     private List<WebElement> deleteBtnList;
@@ -49,6 +49,18 @@ public class _US_03_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//span[text()=' 1000 ']")
     private WebElement maxElementBtn;
     //-----------------------------------------------
+
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    private WebElement forwardButton;
+
+    @FindBy(xpath = "//ms-delete-button/button")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut; // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
+    @FindBy(xpath = "//ms-edit-button/button")
+    public List<WebElement> editBtnList;
 
     public void findElementAndClickFunction(String elementName) {
 
@@ -119,6 +131,52 @@ public class _US_03_DialogContent extends _US_00_Parent {
                 clickFunction(deleteBtnList.get(i));
         }
     }
+    public void findElementAndDeleteFunction2(String deleteName) {
+
+        editOrDelete(deleteBtnList, deleteName);
+    }
+
+    public void findElementAndEditFunction2(String editName) {
+        editOrDelete(editBtnList, editName);
+    }
+
+    public void editOrDelete(List<WebElement> element, String name) {
+        int i = 0;
+        int returnNum = 0;
+        boolean key = false;
+
+        clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
+        if (nameList.size() != 0) {
+            String currentName = "";
+
+            //waitVisibleListAllElement(myListElement);
+            do {
+                if (i == 0 && key == true) {
+                    clickFunction(forTimeOut); //dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+                }
+                currentName = nameList.get(i).getText();
+                WebElement elm = element.get(i);
+                i++;
+
+                if (name.equalsIgnoreCase(currentName)) {
+                    System.out.println(elm);
+                    clickFunction(elm);
+                    break;
+                }
+                if (i == 10 && forwardButton.isEnabled()) {
+                    i = 0;
+                    clickFunction(forwardButton);
+                    key = true;
+                }
+
+            } while (!name.equals(currentName) && i < nameList.size());
+
+        } else {
+            System.out.println(" silinecek eleman bulunamadi....");
+        }
+    }
+
 
 
 }

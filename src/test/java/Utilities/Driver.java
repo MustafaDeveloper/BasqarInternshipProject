@@ -34,25 +34,25 @@ public class Driver {
         // eğer browser adı gelmezse
         if (threadBrowserName.get()==null)
         {
-            threadBrowserName.set("firefox");
+            threadBrowserName.set("chrome");
         }
 
         if (threadDriver.get() == null)
         {
             switch (threadBrowserName.get())
             {
-                case "chrome":
-//                    WebDriverManager.firefoxdriver().setup();
-//                    threadDriver.set( new FirefoxDriver() );
-//                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    threadDriver.set( new FirefoxDriver() );
+                    break;
 
                 default:
-//                    WebDriverManager.chromedriver().setup();
-//                    threadDriver.set( new ChromeDriver() );
-//                    break;
-                WebDriverManager.firefoxdriver().setup();
-                threadDriver.set( new FirefoxDriver() );
-                break;
+                    WebDriverManager.chromedriver().setup();
+                    threadDriver.set( new ChromeDriver() );
+                    break;
+//                WebDriverManager.firefoxdriver().setup();
+//                threadDriver.set( new FirefoxDriver() );
+//                break;
 
             }
         }
