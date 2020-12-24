@@ -34,14 +34,14 @@ public class Driver {
         // eğer browser adı gelmezse
         if (threadBrowserName.get()==null)
         {
-            threadBrowserName.set("chrome");
+            threadBrowserName.set("firefox");
         }
 
         if (threadDriver.get() == null)
         {
             switch (threadBrowserName.get())
             {
-                case "firefox":
+                case "chrome":
                     WebDriverManager.firefoxdriver().setup();
                     threadDriver.set( new FirefoxDriver() );
                     break;
