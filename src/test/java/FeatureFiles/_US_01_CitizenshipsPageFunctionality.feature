@@ -4,7 +4,7 @@ Feature:  _US_01_Citizenships Page functionality
     Given Navigate to basqar
     When Enter username and password and click Login button
 
-  @SmokeTest
+  @RegressionTest
   Scenario: create edit and delete Nationalities
     When Navigate to citizionshippage
    Then User should be able to create new citizionships with required informations
