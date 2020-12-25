@@ -15,6 +15,7 @@ public class _US_05_GradeLevelsSteps {
     WebDriver driver;
     _US_05_LeftNavigation leftNavigation = new _US_05_LeftNavigation();
     _US_05_DialogContent dialogContent = new _US_05_DialogContent();
+    String createString;
 
     @When("^Navigate to Grade levels  page$")
    public void navigateToGradelevelsPage() {
@@ -27,10 +28,11 @@ public class _US_05_GradeLevelsSteps {
     }
     @Then("^Create a Grade$")
     public void CreateAGrade() {
+        createString = "Group8_" + ""+((int)(Math.random()*1000));
         leftNavigation.findElementAndClickFunction("gardeLevelsButton");
        dialogContent.findElementAndClickFunction("addButton");
-        dialogContent.findElementAndSendKeysFunction("nameInput","nalan");
-        dialogContent.findElementAndSendKeysFunction("shortNameInput","n7");
+        dialogContent.findElementAndSendKeysFunction("nameInput",createString);
+        dialogContent.findElementAndSendKeysFunction("shortNameInput",(createString+"n7"));
        dialogContent.findElementAndSendKeysFunction("orderInput","1");
         dialogContent.findElementAndClickFunction("saveButton");
 
@@ -43,8 +45,8 @@ public class _US_05_GradeLevelsSteps {
     @Then("^Edit a Grade levels$")
     public void EditaGradelevels()  {
 
-       dialogContent.findElementAndEditFunction("nalan");
-        dialogContent.findElementAndSendKeysFunction("nameInput","nalan8");
+       dialogContent.findElementAndEditFunction2(createString);
+        dialogContent.findElementAndSendKeysFunction("nameInput",(createString+"88"));
         dialogContent.findElementAndClickFunction("activeslide");
         dialogContent.findElementAndClickFunction("saveButton");
 
@@ -58,7 +60,7 @@ public class _US_05_GradeLevelsSteps {
 
     @Then("^Delete a Grade levels$")
     public void DeleteaGradelevels() throws InterruptedException, AWTException {
-        dialogContent.findElementAndDeleteFunction("nalan8");
+        dialogContent.findElementAndDeleteFunction2((createString+"88"));
         dialogContent.findElementAndClickFunction("yesButton");
 
     }

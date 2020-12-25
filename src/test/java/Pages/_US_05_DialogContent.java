@@ -69,6 +69,13 @@ public class _US_05_DialogContent extends _US_00_Parent{
     private WebElement closeButton;
     @FindBy(className = "cdk-overlay-container")
 private WebElement Layer;
+
+    @FindBy(xpath = "//div[@fxlayoutalign='start center']")
+    private WebElement forTimeOut; // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
+    @FindBy(xpath = "(//button[@type='button'])[3]")
+    private WebElement forwardButton;
+
     public void findElementAndClickFunction(String ElementName) {
         switch (ElementName) {
             case "addButton":
@@ -164,6 +171,56 @@ private WebElement Layer;
                 clickFunction(editBtnList.get(i));
         }
     }
+
+
+    public void findElementAndDeleteFunction2(String deleteName) {
+
+        editOrDelete(deleteBtnList, deleteName);
+    }
+
+    public void findElementAndEditFunction2(String editName) {
+        editOrDelete(editBtnList, editName);
+    }
+
+    public void editOrDelete(List<WebElement> element, String name) {
+        int i = 0;
+        int returnNum = 0;
+        boolean key = false;
+
+        clickFunction(forTimeOut); // dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+
+        if (nameList.size() != 0) {
+            String currentName = "";
+
+            //waitVisibleListAllElement(myListElement);
+            do {
+                if (i == 0 && key == true) {
+                    clickFunction(forTimeOut); //dashboard'da tiklayarak liste elemani gelene kadar zaman kazaniyor
+                }
+                currentName = nameList.get(i).getText();
+                WebElement elm = element.get(i);
+                i++;
+
+                if (name.equalsIgnoreCase(currentName)) {
+                    System.out.println(elm);
+                    clickFunction(elm);
+                    break;
+                }
+                if (i == 10 && forwardButton.isEnabled()) {
+                    i = 0;
+                    clickFunction(forwardButton);
+                    key = true;
+                }
+
+            } while (!name.equals(currentName) && i < nameList.size());
+
+        } else {
+            System.out.println(" silinecek eleman bulunamadi....");
+        }
+    }
+
+
+
 
     public void waitUntilinVisible(String ElementName){
         switch (ElementName) {

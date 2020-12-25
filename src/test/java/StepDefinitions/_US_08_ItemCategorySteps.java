@@ -11,6 +11,7 @@ public class _US_08_ItemCategorySteps {
     _US_08_LeftNavigation leftNavigation=new _US_08_LeftNavigation();
     _US_08_DialogContent dialogContent=new _US_08_DialogContent();
 
+    String createString;
 
     @When("^User should be able to view Item Categories Page$")
     public void userShouldBeAbleToViewItemCategoriesPage() {
@@ -28,8 +29,10 @@ public class _US_08_ItemCategorySteps {
 
     @Then("^User  should be able to create new Item Categorie  and view  successfully validating the message$")
     public void userShouldBeAbleToCreateNewItemCategorieAndViewSuccessfullyValidatingTheMessage() {
+        createString = "Group8Item_" + ""+((int)(Math.random()*1000));
+
         dialogContent.findElementAndClickFunction("addButton");
-        dialogContent.findElementAndSendKeysFunction("nameInput","Group8Item1");
+        dialogContent.findElementAndSendKeysFunction("nameInput",createString);
         dialogContent.findElementAndClickFunction("userTypeButton");
         dialogContent.findElementAndClickFunction("optionList");
         dialogContent.findElementAndClickFunction("saveButton");
@@ -40,22 +43,22 @@ public class _US_08_ItemCategorySteps {
 
     @And("^searching by  name, the results should be matched the search terms\\.$")
     public void searchingByNameTheResultsShouldBeMatchedTheSearchTerms() {
-        dialogContent.findElementAndSendKeysFunction("searchNameInput","Group8Item1");
+        dialogContent.findElementAndSendKeysFunction("searchNameInput",createString);
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
-        dialogContent.findElementAndVerifyName("Group8Item1");
+        dialogContent.findElementAndVerifyName(createString);
     }
 
     @Then("^User should be able to edit Item Categorie and view  successfully validating the message$")
     public void userShouldBeAbleToEditItemCategorieAndViewSuccessfullyValidatingTheMessage() {
-        dialogContent.findElementAndSendKeysFunction("searchNameInput","Group8Item1");
+        dialogContent.findElementAndSendKeysFunction("searchNameInput",createString);
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
-        dialogContent.findElementAndDeleteFunction("Group8Item2");
-        dialogContent.findElementAndEditFunction("Group8Item1");
-        dialogContent.findElementAndSendKeysFunction("nameInput","Group8Item2");
+        dialogContent.findElementAndDeleteFunction((createString+"2"));
+        dialogContent.findElementAndEditFunction(createString);
+        dialogContent.findElementAndSendKeysFunction("nameInput",(createString+"2"));
         dialogContent.findElementAndClickFunction("saveButton");
         dialogContent.findElementAndVerifyContainsText("msjContainer","successfull");
         dialogContent.waitUntilinVisible("msjContainer");
@@ -64,11 +67,11 @@ public class _US_08_ItemCategorySteps {
 
     @Then("^User should be able to delete  Item Categorie and view  successfully validating the message$")
     public void userShouldBeAbleToDeleteItemCategorieAndViewSuccessfullyValidatingTheMessage() {
-        dialogContent.findElementAndSendKeysFunction("searchNameInput","Group8Item2");
+        dialogContent.findElementAndSendKeysFunction("searchNameInput",(createString+"2"));
         dialogContent.findElementAndClickFunction("searchButton");
         dialogContent.findElementAndClickFunction("pageSelectBtn");
         dialogContent.findElementAndClickFunction("maxElementBtn");
-        dialogContent.findElementAndDeleteFunction("Group8Item2");
+        dialogContent.findElementAndDeleteFunction((createString+"2"));
         dialogContent.findElementAndClickFunction("yesButton");
         dialogContent.findElementAndVerifyContainsText("msjContainer","successfull");
         dialogContent.waitUntilinVisible("msjContainer");
