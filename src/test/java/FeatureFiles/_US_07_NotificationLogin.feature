@@ -50,3 +50,4 @@ Feature: _US_07_Notification Functionality
       | searchName | asdfefdd |
     Then Delete element in the content class
     Then Success message should be displayed
+#Hallo
