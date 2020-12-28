@@ -47,7 +47,7 @@ public class _US_06_DialogContent extends _US_00_Parent {
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
     private WebElement nameInput;
 
-    @FindBy(xpath = "//*[@id=\"mat-dialog-1\"]/ng-component/ms-dialog/div/ms-dialog-content/div/mat-form-field[2]")
+    @FindBy(xpath = "//*[@id='mat-dialog-1' ]/ng-component/ms-dialog/div/ms-dialog-content/div/mat-form-field[2]")
     private WebElement StageInput;
 
     @FindBy(xpath = "//span[text()=' Examination ']")

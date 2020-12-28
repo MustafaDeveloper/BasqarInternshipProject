@@ -1,4 +1,5 @@
 Feature: _US_06_Document Type Page functionality
+
   Background:
     Given Navigate to basqar
     When Enter username and password and click Login button

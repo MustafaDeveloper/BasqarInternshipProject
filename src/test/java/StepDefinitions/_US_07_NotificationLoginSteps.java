@@ -1,12 +1,13 @@
-package StepDefinitions;
 
-import Pages._US_07_DialogContent;
-import Pages._US_07_LeftNavigation;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+        package StepDefinitions;
 
-import java.util.List;
+        import Pages._US_07_DialogContent;
+        import Pages._US_07_LeftNavigation;
+        import cucumber.api.DataTable;
+        import cucumber.api.java.en.Then;
+        import cucumber.api.java.en.When;
+
+        import java.util.List;
 
 public class _US_07_NotificationLoginSteps {
     _US_07_DialogContent dialogContent = new _US_07_DialogContent();
@@ -74,3 +75,4 @@ public class _US_07_NotificationLoginSteps {
         dialogContent.findElementAndClickFunction("yesButton");
     }
 }
+

@@ -14,7 +14,7 @@ public class _US_06_DocumentTypesSteps {
     _US_06_LeftNavigation leftNavigation = new _US_06_LeftNavigation();
     _US_06_DialogContent _US_06_DialogContent = new _US_06_DialogContent();
     Robot robot;
-
+    String randomString;
 
     @When("^navigate to Document types page$")
     public void navigateToDocumentTypesPage() {
@@ -25,16 +25,18 @@ public class _US_06_DocumentTypesSteps {
 
     @Then("^create a new Document$")
     public void createANewDocument() throws AWTException {
+        randomString = "Group8Nationalities_" + ""+((int)(Math.random()*1000));
         _US_06_DialogContent.findElementAndClickFunction("addButton");
-        _US_06_DialogContent.findElementAndSendKeysFunction("nameInput", "group 08");
+        _US_06_DialogContent.findElementAndSendKeysFunction("nameInput", randomString);
         _US_06_DialogContent.findElementAndClickFunction("StageInput");
         _US_06_DialogContent.findElementAndClickFunction("ExaminationButton");
      //   _US_06_DialogContent.findElementAndClickFunction("newDocumentTag1");
 
         robot = new Robot();
         robot.keyPress(KeyEvent.VK_TAB);
-        _US_06_DialogContent.findElementAndClickFunction("newDocumentTag");
-        _US_06_DialogContent.findElementAndClickFunction("saveButton");
+
+
+        _US_06_DialogContent.   findElementAndClickFunction("saveButton");
     }
 
     @And("^success message should be displayed$")
@@ -46,11 +48,11 @@ public class _US_06_DocumentTypesSteps {
     public void editADocument() throws AWTException {
 
 
-        _US_06_DialogContent.findElementAndSendKeysFunction("nameInputForSearch", "group 08");
+        _US_06_DialogContent.findElementAndSendKeysFunction("nameInputForSearch", randomString);
         _US_06_DialogContent.findElementAndClickFunction("searchButton");
 
-        _US_06_DialogContent.findElementAndEditFunction("group 08");
-        _US_06_DialogContent.findElementAndSendKeysFunction("nameInput", "group 888");
+        _US_06_DialogContent.findElementAndEditFunction(randomString);
+        _US_06_DialogContent.findElementAndSendKeysFunction("nameInput", (randomString+"888"));
 
         _US_06_DialogContent.findElementAndClickFunction("saveButton");
 
@@ -64,10 +66,10 @@ public class _US_06_DocumentTypesSteps {
     @Then("^delete a Document account$")
     public void deleteADocumentAccount() {
 
-        _US_06_DialogContent.findElementAndSendKeysFunction("nameInputForSearch", "group 888");
+        _US_06_DialogContent.findElementAndSendKeysFunction("nameInputForSearch", (randomString+"888"));
         _US_06_DialogContent.findElementAndClickFunction("searchButton");
 
-        _US_06_DialogContent.findElementAndDeleteFunction("group 888");
+        _US_06_DialogContent.findElementAndDeleteFunction((randomString+"888"));
         _US_06_DialogContent.findElementAndClickFunction("yesButton");
     }
 
