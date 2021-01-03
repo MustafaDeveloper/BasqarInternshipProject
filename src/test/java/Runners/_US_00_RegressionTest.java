@@ -21,10 +21,8 @@ import org.testng.annotations.Parameters;
 
 
         plugin = {
-
         "html:target/cucumber-report",
         "json:target/cucumber.json"
-
         }
 
 )
