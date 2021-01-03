@@ -20,8 +20,8 @@ import org.testng.annotations.Parameters;
 
 
         plugin = {
-                "json:target/cucumber-report",
-                "html:target/cucumber.json"
+                "html:target/cucumber-report",
+                "json:target/cucumber.json"
         }
 
 )
