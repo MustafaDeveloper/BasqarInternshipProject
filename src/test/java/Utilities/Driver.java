@@ -63,9 +63,9 @@ public class Driver {
 //                break;
 
                     // Normal ortamda calisma
-                                            WebDriverManager.chromedriver().setup();
-                        threadDriver.set(new ChromeDriver());
-                        break;
+//                                            WebDriverManager.chromedriver().setup();
+//                        threadDriver.set(new ChromeDriver());
+//                        break;
 
             }
         }
