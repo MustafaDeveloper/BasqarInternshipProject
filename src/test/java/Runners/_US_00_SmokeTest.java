@@ -19,10 +19,10 @@ import org.testng.annotations.Parameters;
 //                // oluşturalacak raporun yeri ve adı veriliyor.}
 
 
-
-        plugin = ("json:target/cucumber-reports/CucumberTestReport.json"),
-        monochrome= true
-
+        plugin = {
+                "json:target/cucumber-report",
+                "html:target/cucumber.json"
+        }
 
 )
 public class _US_00_SmokeTest extends AbstractTestNGCucumberTests {

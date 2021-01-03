@@ -20,8 +20,11 @@ import org.testng.annotations.Parameters;
 
 
 
-        plugin = ("json:target/cucumber-reports/CucumberTestReport.json"),
-        monochrome= true
+        plugin = {
+               "json:target/cucumber-report",
+                "html:target/cucumber.json"
+        }
+
 )
 public class _US_00_RegressionTest extends AbstractTestNGCucumberTests {
 
